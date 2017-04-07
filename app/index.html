@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <title>Vapor</title>
+    <meta charset="utf-8">
+    <meta name="csrf-token" content="_csrf">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type="text/css">
+      .react-image-viewer-sliderView{
+        position: relative;
+        width: 100%;
+      }
+      .react-image-viewer ul{
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        position: relative;
+        width: 100%;
+      }
+      .react-image-viewer-slide {
+        transition: opacity 1s ease-out;
+
+        position: absolute;
+        z-index: 9;
+        top: 0;
+        left: 0;
+        opacity: 0;
+      }
+      .react-image-viewer-slide.is-current{
+        opacity: 1;
+      }
+      .react-image-viewer-sliderButton{
+        height: 90vh;
+        width: 50%;
+        border: 0;
+        outline: 0;
+        background: none;
+        background-color: black;
+        position: absolute;
+        z-index: 10;
+        opacity: 0;
+        
+      }
+      .react-image-viewer-sliderButton--prev{
+        left: 0;
+        cursor: w-resize;
+      }
+      .react-image-viewer-sliderButton--next{
+        right: 0;
+        cursor: e-resize;
+      }
+    </style>
+    <script src="https://use.fontawesome.com/49904d552a.js"></script>
+  </head>
+  <body>
+    <div id="slideshow"></div>
+    <script src="src/js/app.js"></script>
+  </body>
+</html>
