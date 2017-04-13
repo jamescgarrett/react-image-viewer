@@ -46,10 +46,10 @@ class App extends Component {
     } = this.props;
     return (
       <div className='react-image-viewer'>
+        <p className='react-image-viewer-error'>{error ? error : ''}</p>
         {isLoading &&
           <div>
-            <p className='react-image-viewer-error'>{error ? error : ''}</p>
-            <span className='react-image-viewer-loading' />
+            <span className='react-image-viewer-loading'><i className='fa fa-2x fa-spinner fa-pulse' /></span>
           </div>
         }
 

@@ -4,91 +4,91 @@
       "id": "slide-1",
       "image": "https://source.unsplash.com/random",
       "details": "Emmy \r\nSize 8’x2’\r\nMaterial",
-      "imageTitle": "Emmy"
+      "title": "Emmy"
     },
     {
       "id": "slide-2",
       "image": "https://source.unsplash.com/user/dankapeter",
       "details": "Lola \r\nSize 8’x345’\r\nMaterial",
-      "imageTitle": "Lola"
+      "title": "Lola"
     },
     {
       "id": "slide-3",
       "image": "https://source.unsplash.com/user/ashanedis",
       "details": "Mr Potato head \r\nSize 8’x14’\r\nMaterial",
-      "imageTitle": "Mr Potato"
+      "title": "Mr Potato"
     },
     {
       "id": "slide-4",
       "image": "https://source.unsplash.com/user/mahkeo",
       "details": "Elena \r\nSize 3’x8’\r\nMaterial",
-      "imageTitle": "Elena"
+      "title": "Elena"
     },
     {
       "id": "slide-5",
       "image": "https://source.unsplash.com/user/joshuaearle",
       "details": "Popcorn \r\nSize 445’x8’\r\nMaterial",
-      "imageTitle": "popcorn"
+      "title": "popcorn"
     },
     {
       "id": "slide-6",
       "image": "https://source.unsplash.com/random",
       "details": "Emmy \r\nSize 8’x2’\r\nMaterial",
-      "imageTitle": "Emmy"
+      "title": "Emmy"
     },
     {
       "id": "slide-7",
       "image": "https://source.unsplash.com/user/dankapeter",
       "details": "Lola \r\nSize 8’x345’\r\nMaterial",
-      "imageTitle": "Lola"
+      "title": "Lola"
     },
     {
       "id": "slide-8",
       "image": "https://source.unsplash.com/user/ashanedis",
       "details": "Mr Potato head \r\nSize 8’x14’\r\nMaterial",
-      "imageTitle": "Mr Potato"
+      "title": "Mr Potato"
     },
     {
       "id": "slide-9",
       "image": "https://source.unsplash.com/user/mahkeo",
       "details": "Elena \r\nSize 3’x8’\r\nMaterial",
-      "imageTitle": "Elena"
+      "title": "Elena"
     },
     {
       "id": "slide-10",
       "image": "https://source.unsplash.com/user/joshuaearle",
       "details": "Popcorn \r\nSize 445’x8’\r\nMaterial",
-      "imageTitle": "popcorn"
+      "title": "popcorn"
     },
     {
       "id": "slide-11",
       "image": "https://source.unsplash.com/random",
       "details": "Emmy \r\nSize 8’x2’\r\nMaterial",
-      "imageTitle": "Emmy"
+      "title": "Emmy"
     },
     {
       "id": "slide-12",
       "image": "https://source.unsplash.com/user/dankapeter",
       "details": "Lola \r\nSize 8’x345’\r\nMaterial",
-      "imageTitle": "Lola"
+      "title": "Lola"
     },
     {
       "id": "slide-13",
       "image": "https://source.unsplash.com/user/ashanedis",
       "details": "Mr Potato head \r\nSize 8’x14’\r\nMaterial",
-      "imageTitle": "Mr Potato"
+      "title": "Mr Potato"
     },
     {
       "id": "slide-14",
       "image": "https://source.unsplash.com/user/mahkeo",
       "details": "Elena \r\nSize 3’x8’\r\nMaterial",
-      "imageTitle": "Elena"
+      "title": "Elena"
     },
     {
       "id": "slide-15",
       "image": "https://source.unsplash.com/user/joshuaearle",
       "details": "Popcorn \r\nSize 445’x8’\r\nMaterial",
-      "imageTitle": "popcorn"
+      "title": "popcorn"
     }
   ]
 }

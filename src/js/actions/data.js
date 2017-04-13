@@ -10,7 +10,7 @@ import {
   GET_DATA_REQUEST_SUCCESS,
 } from '../constants';
 
-const API_PATH = 'http://localhost:8080';
+const API_PATH = window.location.origin;
 
 /** GET_DATA_REQUEST */
 export const getDataRequest = () => ({

@@ -7,7 +7,10 @@ const SliderView = ({ data, currentSlide, onNextSlide, onPrevSlide }) => (
     <ul>
       {data.slides.map((d, i) => (
         <li key={d.id} className={currentSlide === i ? 'react-image-viewer-slide is-current' : 'react-image-viewer-slide'}>
-          <img src={d.image} alt={d.imageTitle} />
+          <img src={d.image} alt={d.title} />
+          <div className='react-image-viewer-slide-details'>
+            <p>{d.details.split('\n').map(j => <span className='react-image-viewer-slide-detail'>{j}</span>)}</p>
+          </div>
         </li>
       ))}
     </ul>

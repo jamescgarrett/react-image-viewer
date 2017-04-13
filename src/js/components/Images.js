@@ -47,7 +47,9 @@ export default class Images extends Component {
     } = this.props;
     return (
       <div className='react-image-viewer-images'>
-        <button onClick={this._handleViewToggle} className='react-image-viewer-toggle'><i className='fa fa-picture-o fa-2x' /></button>
+        <button onClick={this._handleViewToggle} className='react-image-viewer-toggle'>
+          <i className={viewStatus === 'slider' ? 'fa fa-th-large fa-2x' : 'fa fa-square fa-2x'} />
+        </button>
 
         {viewStatus === 'list' &&
           <ListView data={data} />
