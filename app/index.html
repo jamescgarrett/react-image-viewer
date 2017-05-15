@@ -29,31 +29,27 @@
       }
       .react-image-viewer-slide.is-current{
         opacity: 1;
+        z-index: 10;
       }
       .react-image-viewer-sliderButton{
-        height: 90vh;
-        width: 50%;
+        outline: none;
         border: 0;
-        outline: 0;
         background: none;
-        background-color: black;
-        position: absolute;
-        z-index: 10;
-        opacity: 0;
+
+        font-size: 2rem;
         
       }
       .react-image-viewer-sliderButton--prev{
         left: 0;
-        cursor: w-resize;
       }
       .react-image-viewer-sliderButton--next{
         right: 0;
-        cursor: e-resize;
       }
       .react-image-viewer-slide-details{
         display: block;
       }
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.1/css/bulma.min.css" />
     <script src="https://use.fontawesome.com/49904d552a.js"></script>
   </head>
   <body>

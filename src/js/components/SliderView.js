@@ -1,27 +1,48 @@
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 
-const SliderView = ({ data, currentSlide, onNextSlide, onPrevSlide }) => (
-  <div className='react-image-viewer-sliderView'>
-    <button onClick={onPrevSlide} className='react-image-viewer-sliderButton react-image-viewer-sliderButton--prev' />
-    <button onClick={onNextSlide} className='react-image-viewer-sliderButton react-image-viewer-sliderButton--next' />
-    <ul>
-      {data.slides.map((d, i) => (
-        <li key={d.id} className={currentSlide === i ? 'react-image-viewer-slide is-current' : 'react-image-viewer-slide'}>
-          <img src={d.image} alt={d.title} />
-          <div className='react-image-viewer-slide-details'>
-            <p>{d.details.split('\n').map(j => <span className='react-image-viewer-slide-detail'>{j}</span>)}</p>
-          </div>
-        </li>
-      ))}
-    </ul>
-  </div>
-);
+export default class SliderView extends Component {
 
-SliderView.propTypes = {
-  data: PropTypes.object.isRequired,
-  currentSlide: PropTypes.number.isRequired,
-  onNextSlide: PropTypes.func.isRequired,
-  onPrevSlide: PropTypes.func.isRequired,
-};
+  static propTypes = {
+    data: PropTypes.object.isRequired,
+    currentSlide: PropTypes.number.isRequired,
+    onImageClick: PropTypes.func.isRequired,
+    onContextMenu: PropTypes.func.isRequired,
+  }
 
-export default SliderView;
+  constructor(props) {
+    super(props);
+
+    this._handleImageClick = this._handleImageClick.bind(this);
+  }
+
+  _handleImageClick(uri) {
+    const { onImageClick } = this.props;
+    onImageClick(uri);
+  }
+
+  render() {
+    const {
+      data,
+      currentSlide,
+      onContextMenu,
+    } = this.props;
+    return (
+      <div className='react-image-viewer-sliderView'>
+        <ul>
+          {data.slides.map((d, i) => (
+            <li key={d.id} className={currentSlide === i ? 'react-image-viewer-slide is-current' : 'react-image-viewer-slide'}>
+              <button onClick={() => this._handleImageClick(d.image)}>
+                <img onContextMenu={onContextMenu} src={d.image} alt={d.title} />
+              </button>
+              {d.details &&
+                <div className='react-image-viewer-slide-details'>
+                  <p>{d.details.split('\n').map(j => <span key={`${j}`} className='react-image-viewer-slide-detail'>{j}</span>)}</p>
+                </div>
+              }
+            </li>
+          ))}
+        </ul>
+      </div>
+    );
+  }
+}

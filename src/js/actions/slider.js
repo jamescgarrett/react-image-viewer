@@ -13,7 +13,7 @@ export const slideRequest = slide => ({
 export const slide = (sliderLength, currentSlide, type) => (dispatch) => {
   switch (type) {
     case 'next':
-      if (currentSlide === sliderLength) {
+      if (currentSlide === sliderLength - 1) {
         dispatch(slideRequest(0));
       } else {
         dispatch(slideRequest(currentSlide + 1));

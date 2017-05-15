@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 import { getData } from '../actions/data';
 import { updateUi } from '../actions/ui';
+import { updateLightbox, closeLightbox } from '../actions/lightbox';
 import { slide } from '../actions/slider';
 
 import { Images } from '../components';
@@ -15,6 +16,8 @@ class App extends Component {
     data: PropTypes.object,
     viewStatus: PropTypes.string,
     currentSlide: PropTypes.number,
+    lightboxOpen: PropTypes.bool,
+    lightboxUri: PropTypes.string,
     dispatch: PropTypes.func,
   }
 
@@ -26,14 +29,23 @@ class App extends Component {
     this.props.dispatch(updateUi(view));
   }
 
-  _handleNextSlide(current) {
-    const { data } = this.props;
-    this.props.dispatch(slide(data.length, current, 'next'));
+  _handleNextSlide() {
+    const { data, currentSlide } = this.props;
+    this.props.dispatch(slide(data.slides.length, currentSlide, 'next'));
   }
 
-  _handlePrevSlide(current) {
-    const { data } = this.props;
-    this.props.dispatch(slide(data.length, current, 'prev'));
+  _handlePrevSlide() {
+    const { data, currentSlide } = this.props;
+    this.props.dispatch(slide(data.length, currentSlide, 'prev'));
+  }
+
+  _handleImageClick(uri) {
+    const { lightboxOpen } = this.props;
+    this.props.dispatch(updateLightbox(uri, lightboxOpen));
+  }
+
+  _handleLightboxClose() {
+    this.props.dispatch(closeLightbox());
   }
 
   render() {
@@ -43,6 +55,8 @@ class App extends Component {
       data,
       viewStatus,
       currentSlide,
+      lightboxOpen,
+      lightboxUri,
     } = this.props;
     return (
       <div className='react-image-viewer'>
@@ -59,8 +73,12 @@ class App extends Component {
             viewStatus={viewStatus}
             currentSlide={currentSlide}
             onToggleView={view => this._handleViewToggle(view)}
-            onNextSlide={current => this._handleNextSlide(current)}
-            onPrevSlide={current => this._handlePrevSlide(current)}
+            onNextSlide={() => this._handleNextSlide()}
+            onPrevSlide={() => this._handlePrevSlide()}
+            onImageClick={uri => this._handleImageClick(uri)}
+            onLightboxClose={() => this._handleLightboxClose()}
+            lightboxOpen={lightboxOpen}
+            lightboxUri={lightboxUri}
           />
         }
       </div>
@@ -74,6 +92,8 @@ const mapStateToProps = state => ({
   data: state.data.data,
   viewStatus: state.ui.viewStatus,
   currentSlide: state.slider.currentSlide,
+  lightboxOpen: state.lightbox.open,
+  lightboxUri: state.lightbox.uri,
 });
 
 export default connect(mapStateToProps)(App);

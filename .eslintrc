@@ -10,6 +10,7 @@
       "react/react-in-jsx-scope": 2,
       "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
       "react/forbid-prop-types": 0,
+      "jsx-a11y/no-static-element-interactions": 0,
       "react/require-default-props": 0,
       "no-underscore-dangle": 0,
       "no-unneeded-ternary": 0

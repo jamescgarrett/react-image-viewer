@@ -1,19 +1,41 @@
-import React, { PropTypes } from 'react';
+import React, { PropTypes, Component } from 'react';
 
-const ListView = ({ data }) => (
-  <div className='react-image-viewer-listView'>
-    <ul>
-      {data.slides.map(d => (
-        <li key={d.id} className='react-image-viewer-listItem'>
-          <img src={d.image} alt={d.imageTitle} />
-        </li>
-      ))}
-    </ul>
-  </div>
-);
+export default class ListView extends Component {
 
-ListView.propTypes = {
-  data: PropTypes.object.isRequired,
-};
+  static propTypes = {
+    data: PropTypes.object.isRequired,
+    onImageClick: PropTypes.func.isRequired,
+    onContextMenu: PropTypes.func.isRequired,
+  }
 
-export default ListView;
+  constructor(props) {
+    super(props);
+
+    this._handleImageClick = this._handleImageClick.bind(this);
+  }
+
+  _handleImageClick(uri) {
+    const { onImageClick } = this.props;
+    onImageClick(uri);
+  }
+
+  render() {
+    const {
+      data,
+      onContextMenu,
+    } = this.props;
+    return (
+      <div className='react-image-viewer-listView'>
+        <ul>
+          {data.slides.map(d => (
+            <li key={d.id} className='react-image-viewer-listItem'>
+              <button onClick={() => this._handleImageClick(d.image)}>
+                <img onContextMenu={onContextMenu} src={d.image} alt={d.imageTitle} />
+              </button>
+            </li>
+          ))}
+        </ul>
+      </div>
+    );
+  }
+}

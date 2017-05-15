@@ -10,8 +10,6 @@ import {
   GET_DATA_REQUEST_SUCCESS,
 } from '../constants';
 
-const API_PATH = window.location.origin;
-
 /** GET_DATA_REQUEST */
 export const getDataRequest = () => ({
   type: GET_DATA_REQUEST,
@@ -35,10 +33,11 @@ export const getDataRequestFailure = error => ({
 export const getData = () => (dispatch) => {
   dispatch(getDataRequest());
 
+  const API_PATH = window.location.origin;
   const paths = window.location.pathname.split('/');
   const loc = paths[1];
 
-  return fetch(`${API_PATH}/slideshow/${loc}.json`, {
+  return fetch(`${API_PATH}/slideshow/${loc}.json`, { // `${API_PATH}/slideshow/${loc}.json`
     method: 'GET',
     mode: 'cors',
   })

@@ -4,4 +4,7 @@ export const GET_DATA_REQUEST_SUCCESS = 'GET_DATA_REQUEST_SUCCESS';
 
 export const UPDATE_UI = 'UPDATE_UI';
 
+export const UPDATE_LIGHTBOX = 'UPDATE_LIGHTBOX';
+export const CLOSE_LIGHTBOX = 'CLOSE_LIGHTBOX';
+
 export const SLIDE = 'SLIDE';
